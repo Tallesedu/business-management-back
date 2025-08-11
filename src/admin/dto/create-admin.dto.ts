@@ -1,6 +1,7 @@
 import { ApiProperty } from '@nestjs/swagger';
 import {
   IsDate,
+  IsEmail,
   IsNotEmpty,
   IsNumber,
   isNumber,
@@ -23,6 +24,7 @@ export class CreateAdminDto {
   nome: string;
 
   @IsString()
+  @IsEmail()
   @IsNotEmpty()
   @MaxLength(255, { message: 'O campo email pode conter até 255 caracteres!' })
   @ApiProperty()
